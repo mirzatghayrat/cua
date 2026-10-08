@@ -1,0 +1,85 @@
+[dependencies.concurrent-queue]
+default-features = false
+version = "2.4.0"
+
+[dependencies.critical-section]
+default-features = false
+optional = true
+version = "1.2.0"
+
+[dependencies.pin-project-lite]
+version = "0.2.12"
+
+[dependencies.portable-atomic-util]
+default-features = false
+features = ["alloc"]
+optional = true
+version = "0.2.0"
+
+[dependencies.portable_atomic_crate]
+default-features = false
+optional = true
+package = "portable-atomic"
+version = "1.2.0"
+
+[dev-dependencies.criterion]
+default-features = false
+features = ["cargo_bench_support"]
+version = "0.7"
+
+[dev-dependencies.critical-section]
+features = ["std"]
+version = "1.2.0"
+
+[dev-dependencies.futures-lite]
+version = "2.0.0"
+
+[dev-dependencies.try-lock]
+version = "0.2.5"
+
+[dev-dependencies.waker-fn]
+version = "1"
+
+[features]
+default = ["std"]
+loom = ["concurrent-queue/loom", "parking?/loom", "dep:loom"]
+portable-atomic = ["portable-atomic-util", "portable_atomic_crate", "concurrent-queue/portable-atomic"]
+std = ["concurrent-queue/std", "parking"]
+
+[lib]
+path = "src/lib.rs"
+
+[lints.rust.unexpected_cfgs]
+check-cfg = ["cfg(loom)"]
+level = "warn"
+priority = 0
+
+[package]
+authors = ["Stjepan Glavina <stjepang@gmail.com>", "John Nunley <dev@notgull.net>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["asynchronous", "concurrency"]
+description = "Notify async tasks or threads"
+edition = "2021"
+exclude = ["/.*"]
+keywords = ["condvar", "eventcount", "wake", "blocking", "park"]
+license = "Apache-2.0 OR MIT"
+name = "event-listener"
+readme = "README.md"
+repository = "https://github.com/smol-rs/event-listener"
+rust-version = "1.60"
+version = "5.4.1"
+
+[target."cfg(loom)".dependencies.loom]
+optional = true
+version = "0.7"
+
+[target.'cfg(not(target_family = "wasm"))'.dependencies.parking]
+optional = true
+version = "2.0.0"
+
+[target.'cfg(target_family = "wasm")'.dev-dependencies.wasm-bindgen-test]
+version = "0.3"

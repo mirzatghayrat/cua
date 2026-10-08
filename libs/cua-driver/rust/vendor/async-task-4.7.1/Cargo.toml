@@ -1,0 +1,50 @@
+[dependencies.portable-atomic]
+default-features = false
+optional = true
+version = "1"
+
+[dev-dependencies.atomic-waker]
+version = "1"
+
+[dev-dependencies.easy-parallel]
+version = "3"
+
+[dev-dependencies.flaky_test]
+version = "0.2"
+
+[dev-dependencies.flume]
+default-features = false
+version = "0.11"
+
+[dev-dependencies.futures-lite]
+version = "2.0.0"
+
+[dev-dependencies.once_cell]
+version = "1"
+
+[dev-dependencies.pin-project-lite]
+version = "0.2.10"
+
+[dev-dependencies.smol]
+version = "2"
+
+[features]
+default = ["std"]
+std = []
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Stjepan Glavina <stjepang@gmail.com>"]
+categories = ["asynchronous", "concurrency", "no-std"]
+description = "Task abstraction for building executors"
+edition = "2021"
+exclude = ["/.*"]
+keywords = ["futures", "task", "executor", "spawn"]
+license = "Apache-2.0 OR MIT"
+name = "async-task"
+readme = "README.md"
+repository = "https://github.com/smol-rs/async-task"
+rust-version = "1.57"
+version = "4.7.1"

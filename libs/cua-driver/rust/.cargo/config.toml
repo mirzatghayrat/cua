@@ -8,3 +8,12 @@ rustflags = ["-C", "target-feature=+crt-static"]
 
 [target.aarch64-pc-windows-msvc]
 rustflags = ["-C", "target-feature=+crt-static"]
+
+# Arslan's fork (ARSLAN-FORK.md at the repository root): every dependency is
+# vendored for aarch64-apple-darwin, so Arslan builds this offline and downloads
+# nothing: cargo build --release --locked --offline -p cua-driver
+[source.crates-io]
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "vendor"

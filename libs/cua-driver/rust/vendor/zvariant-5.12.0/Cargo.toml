@@ -1,0 +1,114 @@
+[dependencies.arrayvec]
+features = ["serde"]
+optional = true
+version = "0.7.4"
+
+[dependencies.camino]
+optional = true
+version = "1.1.9"
+
+[dependencies.chrono]
+default-features = false
+features = ["serde"]
+optional = true
+version = "0.4.38"
+
+[dependencies.endi]
+version = "1.1.0"
+
+[dependencies.enumflags2]
+features = ["serde"]
+optional = true
+version = "0.7.9"
+
+[dependencies.heapless]
+features = ["serde"]
+optional = true
+version = "0.9.0"
+
+[dependencies.serde]
+features = ["derive"]
+version = "1.0.200"
+
+[dependencies.serde_bytes]
+optional = true
+version = "0.11.14"
+
+[dependencies.time]
+features = ["serde"]
+optional = true
+version = "0.3.36"
+
+[dependencies.url]
+features = ["serde"]
+optional = true
+version = "2.5.0"
+
+[dependencies.uuid]
+features = ["serde"]
+optional = true
+version = "1.8.0"
+
+[dependencies.winnow]
+version = "1.0"
+
+[dependencies.zvariant_derive]
+version = "5.12.0"
+
+[dependencies.zvariant_utils]
+version = "3.4.0"
+
+[dev-dependencies.chrono]
+default-features = false
+features = ["serde", "serde", "alloc"]
+version = "0.4.38"
+
+[dev-dependencies.criterion]
+package = "codspeed-criterion-compat"
+version = "4.0.4"
+
+[dev-dependencies.fastrand]
+version = "2.3.0"
+
+[dev-dependencies.serde_json]
+version = "1.0.116"
+
+[dev-dependencies.serde_repr]
+version = "0.1.19"
+
+[features]
+camino = ["dep:camino"]
+default = []
+gvariant = ["zvariant_derive/gvariant", "zvariant_utils/gvariant"]
+option-as-array = []
+ostree-tests = ["gvariant"]
+
+[lib]
+path = "src/lib.rs"
+
+[lints.rust.unexpected_cfgs]
+check-cfg = ["cfg(tokio_unstable)"]
+level = "warn"
+priority = 0
+
+[package]
+authors = ["Zeeshan Ali Khan <zeeshanak@gnome.org>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["data-structures", "encoding", "parsing"]
+description = "D-Bus & GVariant encoding & decoding"
+edition = "2024"
+keywords = ["D-Bus", "DBus", "IPC", "GVariant"]
+license = "MIT"
+name = "zvariant"
+readme = "README.md"
+repository = "https://github.com/z-galaxy/zbus/"
+rust-version = "1.87"
+version = "5.12.0"
+
+[package.metadata.docs.rs]
+all-features = true
+targets = ["x86_64-unknown-linux-gnu", "x86_64-pc-windows-gnu", "x86_64-apple-darwin", "x86_64-unknown-freebsd", "x86_64-unknown-netbsd", "aarch64-linux-android"]

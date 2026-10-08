@@ -1,0 +1,56 @@
+[dependencies.bitflags]
+version = "2"
+
+[dependencies.log]
+optional = true
+version = "0.4"
+
+[dependencies.rustix]
+features = ["event"]
+version = "1.0.2"
+
+[dependencies.wayland-backend]
+version = "0.3.15"
+
+[dependencies.wayland-scanner]
+version = "0.31.10"
+
+[dev-dependencies.futures-channel]
+version = "0.3.16"
+
+[dev-dependencies.futures-util]
+version = "0.3"
+
+[dev-dependencies.tempfile]
+version = "3.2"
+
+[features]
+dlopen = ["wayland-backend/dlopen"]
+libwayland_1_23 = ["wayland-backend/libwayland_client_1_23"]
+system = ["wayland-backend/client_system"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Elinor Berger <elinor@safaradeg.net>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["gui", "api-bindings"]
+description = "Bindings to the standard C implementation of the wayland protocol, client side."
+documentation = "https://docs.rs/wayland-client/"
+edition = "2021"
+keywords = ["wayland", "client"]
+license = "MIT"
+name = "wayland-client"
+readme = "README.md"
+repository = "https://github.com/smithay/wayland-rs"
+rust-version = "1.71"
+version = "0.31.14"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]

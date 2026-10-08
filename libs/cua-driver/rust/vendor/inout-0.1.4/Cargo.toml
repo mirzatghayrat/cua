@@ -1,0 +1,34 @@
+[dependencies.block-padding]
+optional = true
+version = "0.3"
+
+[dependencies.generic-array]
+version = "0.14"
+
+[features]
+std = ["block-padding/std"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["RustCrypto Developers"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+description = "Custom reference types for code generic over in-place and buffer-to-buffer modes of operation."
+documentation = "https://docs.rs/inout"
+edition = "2021"
+keywords = ["custom-reference"]
+license = "MIT OR Apache-2.0"
+name = "inout"
+readme = false
+repository = "https://github.com/RustCrypto/utils"
+rust-version = "1.56"
+version = "0.1.4"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]

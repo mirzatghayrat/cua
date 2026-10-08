@@ -1,0 +1,37 @@
+[dev-dependencies.no-panic]
+version = "0.1.35"
+
+[features]
+arch = []
+default = ["arch"]
+force-soft-floats = []
+unstable = ["unstable-intrinsics", "unstable-float"]
+unstable-float = []
+unstable-intrinsics = []
+unstable-public-internals = []
+
+[lib]
+path = "src/lib.rs"
+
+[lints.rust.unexpected_cfgs]
+check-cfg = ['cfg(feature, values("compiler-builtins"))']
+level = "warn"
+priority = 0
+
+[package]
+authors = ["Alex Crichton <alex@alexcrichton.com>", "Amanieu d'Antras <amanieu@gmail.com>", "Jorge Aparicio <japaricious@gmail.com>", "Trevor Gross <tg@trevorgross.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["no-std"]
+description = "libm in pure Rust"
+edition = "2021"
+keywords = ["libm", "math"]
+license = "MIT"
+name = "libm"
+readme = "README.md"
+repository = "https://github.com/rust-lang/compiler-builtins"
+rust-version = "1.63"
+version = "0.2.16"

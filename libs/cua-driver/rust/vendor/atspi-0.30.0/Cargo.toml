@@ -1,0 +1,83 @@
+[dependencies.atspi-common]
+default-features = false
+version = "0.14.0"
+
+[dependencies.atspi-connection]
+optional = true
+version = "0.14.0"
+
+[dependencies.atspi-proxies]
+optional = true
+version = "0.14.0"
+
+[dependencies.zbus]
+default-features = false
+features = ["async-io"]
+optional = true
+version = "5.5"
+
+[dev-dependencies.criterion]
+version = "=0.5.0"
+
+[dev-dependencies.fastrand]
+version = "2.3"
+
+[dev-dependencies.futures]
+default-features = false
+features = ["alloc"]
+version = "0.3"
+
+[dev-dependencies.futures-lite]
+default-features = false
+version = "2.6.0"
+
+[dev-dependencies.half]
+version = "=2.4.0"
+
+[dev-dependencies.smol-macros]
+version = "0.1.1"
+
+[dev-dependencies.tokio]
+default-features = false
+features = ["macros", "rt-multi-thread"]
+version = "1.38.2"
+
+[dev-dependencies.tokio-stream]
+version = "0.1.1"
+
+[dev-dependencies.zbus]
+default-features = false
+features = ["async-io"]
+version = "5.5"
+
+[features]
+connection = ["dep:atspi-connection"]
+default = ["connection", "proxies", "p2p", "wrappers"]
+p2p = ["atspi-connection/p2p"]
+proxies = ["dep:atspi-proxies"]
+tokio = ["zbus/tokio"]
+tracing = ["atspi-connection/tracing"]
+wrappers = ["atspi-common/wrappers"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Alberto Tirla <albertotirla@gmail.com>", "DataTriny <datatriny@gmail.com>", "Luuk van der Duim <luukvanderduim@gmail.com>", "Michael Connor Buchan <mikey@blindcomputing.org>", "Tait Hoyem <tait@tait.tech>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["accessibility", "api-bindings"]
+description = "Pure-Rust, zbus-based AT-SPI2 protocol implementation."
+edition = "2021"
+homepage = "https://github.com/odilia-app/atspi"
+include = ["LICENSE-*", "README.md", "src/**/*"]
+keywords = ["a11y", "accessibility", "linux", "screen-reader", "tts"]
+license = "Apache-2.0 OR MIT"
+name = "atspi"
+readme = "README.md"
+repository = "https://github.com/odilia-app/atspi"
+rust-version = "1.77.2"
+version = "0.30.0"

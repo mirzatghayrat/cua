@@ -1,0 +1,43 @@
+[badges.maintenance]
+status = "actively-developed"
+
+[badges.travis-ci]
+repository = "Geal/cookie-factory"
+
+[dependencies.futures]
+optional = true
+version = "0.3.16"
+
+[dev-dependencies.async-std]
+features = ["attributes"]
+version = "1.9.0"
+
+[dev-dependencies.maplit]
+version = "^1.0"
+
+[features]
+async = ["futures"]
+default = ["std", "async"]
+std = []
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Geoffroy Couprie <geo.couprie@gmail.com>", "Pierre Chifflier <chifflier@wzdftpd.net>"]
+categories = ["encoding"]
+description = "nom inspired serialization library"
+documentation = "http://docs.rs/cookie-factory"
+edition = "2018"
+include = ["Cargo.toml", "LICENSE", "README.md", ".gitignore", "src/*.rs", "src/combinator/*.rs", "example/*.rs"]
+keywords = ["encoding", "serialization", "nom"]
+license = "MIT"
+name = "cookie-factory"
+readme = "README.md"
+repository = "https://github.com/rust-bakery/cookie-factory"
+version = "0.3.3"
+
+[profile.bench]
+codegen-units = 1
+debug = 2
+lto = true

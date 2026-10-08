@@ -1,0 +1,32 @@
+[dependencies.portable-atomic]
+default-features = false
+optional = true
+version = "1"
+
+[dev-dependencies.criterion]
+default-features = false
+features = ["cargo_bench_support"]
+version = "0.4.0"
+
+[dev-dependencies.futures]
+version = "0.3.5"
+
+[dev-dependencies.rayon]
+version = "1.7.0"
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Stjepan Glavina <stjepang@gmail.com>", "Contributors to futures-rs"]
+categories = ["asynchronous", "concurrency"]
+description = "A synchronization primitive for task wakeup"
+edition = "2018"
+exclude = ["/.*"]
+keywords = ["waker", "notify", "wake", "futures", "async"]
+license = "Apache-2.0 OR MIT"
+name = "atomic-waker"
+readme = "README.md"
+repository = "https://github.com/smol-rs/atomic-waker"
+rust-version = "1.36"
+version = "1.1.2"

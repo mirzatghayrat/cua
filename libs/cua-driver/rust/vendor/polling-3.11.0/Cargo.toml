@@ -1,0 +1,70 @@
+[dependencies.cfg-if]
+version = "1"
+
+[dependencies.tracing]
+default-features = false
+optional = true
+version = "0.1.37"
+
+[dev-dependencies.easy-parallel]
+version = "3.1.0"
+
+[dev-dependencies.fastrand]
+version = "2.0.0"
+
+[dev-dependencies.socket2]
+version = "0.6.0"
+
+[lib]
+path = "src/lib.rs"
+
+[lints.rust.unexpected_cfgs]
+check-cfg = ["cfg(polling_test_poll_backend)", "cfg(polling_test_epoll_pipe)"]
+level = "warn"
+priority = 0
+
+[package]
+authors = ["Stjepan Glavina <stjepang@gmail.com>", "John Nunley <dev@notgull.net>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["asynchronous", "network-programming", "os"]
+description = "Portable interface to epoll, kqueue, event ports, and IOCP"
+edition = "2021"
+exclude = ["/.*"]
+keywords = ["mio", "epoll", "kqueue", "iocp"]
+license = "Apache-2.0 OR MIT"
+name = "polling"
+readme = "README.md"
+repository = "https://github.com/smol-rs/polling"
+rust-version = "1.71"
+version = "3.11.0"
+
+[package.metadata.docs.rs]
+rustdoc-args = ["--cfg", "docsrs"]
+
+[target.'cfg(all(unix, not(target_os="vita")))'.dev-dependencies.signal-hook]
+version = "0.3.17"
+
+[target.'cfg(any(unix, target_os = "fuchsia", target_os = "vxworks"))'.dependencies.rustix]
+default-features = false
+features = ["event", "fs", "pipe", "process", "std", "time"]
+version = "1.0.5"
+
+[target.'cfg(target_os = "hermit")'.dependencies.hermit-abi]
+version = "0.5.0"
+
+[target."cfg(unix)".dev-dependencies.libc]
+version = "0.2"
+
+[target."cfg(windows)".dependencies.concurrent-queue]
+version = "2.2.0"
+
+[target."cfg(windows)".dependencies.pin-project-lite]
+version = "0.2.9"
+
+[target."cfg(windows)".dependencies.windows-sys]
+features = ["Wdk_Foundation", "Wdk_Storage_FileSystem", "Win32_Foundation", "Win32_Networking_WinSock", "Win32_Security", "Win32_Storage_FileSystem", "Win32_System_IO", "Win32_System_LibraryLoader", "Win32_System_Threading", "Win32_System_WindowsProgramming"]
+version = "0.61"

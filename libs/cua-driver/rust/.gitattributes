@@ -1,0 +1,4 @@
+# Arslan: vendored crates are stored byte for byte. Cargo checksums every file;
+# CRLF->LF normalisation (the root rule is text=auto) would break the offline build
+# from a clean checkout. See ARSLAN-FORK.md.
+vendor/** -text

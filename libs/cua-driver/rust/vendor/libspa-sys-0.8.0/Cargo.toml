@@ -1,0 +1,40 @@
+[build-dependencies.bindgen]
+default-features = false
+features = ["experimental", "runtime"]
+version = "0.69"
+
+[build-dependencies.cc]
+version = "1.0"
+
+[build-dependencies.system-deps]
+version = "6"
+
+[dependencies]
+
+[features]
+v0_3_65 = []
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Tom Wagner <tom.a.wagner@protonmail.com", "Guillaume Desmottes <guillaume.desmottes@collabora.com>"]
+categories = ["api-bindings", "multimedia"]
+description = "Rust FFI bindings for libspa"
+documentation = "https://pipewire.pages.freedesktop.org/pipewire-rs/libspa_sys/"
+edition = "2021"
+homepage = "https://pipewire.org"
+keywords = ["ffi", "pipewire", "multimedia", "audio", "video"]
+license = "MIT"
+name = "libspa-sys"
+readme = "README.md"
+repository = "https://gitlab.freedesktop.org/pipewire/pipewire-rs"
+version = "0.8.0"
+
+[package.metadata.system-deps.libpipewire]
+name = "libpipewire-0.3"
+version = "0.3"
+
+[package.metadata.system-deps.libspa]
+name = "libspa-0.2"
+version = "0.2"

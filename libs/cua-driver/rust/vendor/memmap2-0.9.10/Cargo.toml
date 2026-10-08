@@ -1,0 +1,33 @@
+[dependencies.stable_deref_trait]
+optional = true
+version = "1.0"
+
+[dev-dependencies.owning_ref]
+version = "0.4.1"
+
+[dev-dependencies.tempfile]
+version = "3"
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Dan Burkert <dan@danburkert.com>", "Yevhenii Reizner <razrfalcon@gmail.com>", "The Contributors"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+description = "Cross-platform Rust API for memory-mapped file IO"
+documentation = "https://docs.rs/memmap2"
+edition = "2021"
+keywords = ["mmap", "memory-map", "io", "file"]
+license = "MIT OR Apache-2.0"
+name = "memmap2"
+readme = "README.md"
+repository = "https://github.com/RazrFalcon/memmap2-rs"
+rust-version = "1.63"
+version = "0.9.10"
+
+[target."cfg(unix)".dependencies.libc]
+version = "0.2.151"

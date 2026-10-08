@@ -1,0 +1,66 @@
+[dependencies.chrono]
+optional = true
+version = "0.4"
+
+[dependencies.dashmap]
+features = ["serde"]
+optional = true
+version = "6.1"
+
+[dependencies.log]
+version = "0.4"
+
+[dependencies.regex]
+optional = true
+version = "1"
+
+[dependencies.ron]
+optional = true
+version = "0.12"
+
+[dependencies.serde]
+features = ["derive"]
+optional = true
+version = "1"
+
+[dependencies.uuid]
+features = ["v4"]
+optional = true
+version = "1"
+
+[dev-dependencies.doc-comment]
+version = "0.3"
+
+[dev-dependencies.env_logger]
+version = "0.11"
+
+[dev-dependencies.fastrand]
+version = "2"
+
+[features]
+sample = ["dep:dashmap", "dep:ron", "dep:chrono", "dep:regex", "dep:serde", "dep:uuid"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Daniel Brotsky <dev@brotsky.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+description = "Cross-platform library for managing passwords/secrets"
+edition = "2024"
+exclude = [".github/"]
+homepage = "https://github.com/open-source-cooperative/keyring-core"
+keywords = ["password", "secret", "credential", "keychain", "cross-platform"]
+license = "MIT OR Apache-2.0"
+name = "keyring-core"
+readme = "README.md"
+repository = "https://github.com/open-source-cooperative/keyring-core.git"
+rust-version = "1.85"
+version = "1.0.0"
+
+[package.metadata.docs.rs]
+features = ["sample"]

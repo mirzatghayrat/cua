@@ -1,0 +1,51 @@
+[dependencies.keyring-core]
+version = "1"
+
+[dependencies.secret-service]
+version = "5.1"
+
+[dependencies.zbus]
+version = "5.14"
+
+[dev-dependencies.fastrand]
+version = "2.4"
+
+[dev-dependencies.regex]
+version = "1.12"
+
+[dev-dependencies.sscanf]
+version = "0.5"
+
+[features]
+crypto-openssl = ["secret-service/crypto-openssl"]
+crypto-rust = ["secret-service/crypto-rust"]
+rt-async-io-crypto-openssl = ["secret-service/rt-async-io-crypto-openssl"]
+rt-async-io-crypto-rust = ["secret-service/rt-async-io-crypto-rust"]
+rt-tokio-crypto-openssl = ["secret-service/rt-tokio-crypto-openssl"]
+rt-tokio-crypto-rust = ["secret-service/rt-tokio-crypto-rust"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Daniel Brotsky <dev@brotsky.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+description = "ZBus Secret Service credential store for keyring"
+edition = "2024"
+exclude = [".github/"]
+homepage = "https://github.com/open-source-cooperative/keyring-rs/wiki/Keyring"
+keywords = ["zbus", "secret-service", "credential-store", "keyring"]
+license = "MIT OR Apache-2.0"
+name = "zbus-secret-service-keyring-store"
+readme = "README.md"
+repository = "https://github.com/open-source-cooperative/zbus-secret-service-keyring-store.git"
+rust-version = "1.88"
+version = "1.0.0"
+
+[package.metadata.docs.rs]
+features = ["crypto-rust"]
+targets = ["x86_64-unknown-linux-gnu"]

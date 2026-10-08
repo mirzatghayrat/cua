@@ -1,0 +1,99 @@
+[dependencies.arbitrary]
+optional = true
+version = "1.1.0"
+
+[dependencies.libm]
+version = "0.2.1"
+
+[dependencies.num-integer]
+default-features = false
+features = ["i128"]
+version = "0.1.39"
+
+[dependencies.num-iter]
+default-features = false
+version = "0.1.37"
+
+[dependencies.num-traits]
+default-features = false
+features = ["i128"]
+version = "0.2.4"
+
+[dependencies.once_cell]
+version = "1"
+
+[dependencies.rand]
+default-features = false
+optional = true
+version = "0.9"
+
+[dependencies.serde]
+default-features = false
+features = ["alloc"]
+optional = true
+version = "1.0"
+
+[dependencies.smallvec]
+default-features = false
+version = "1.10.0"
+
+[dependencies.zeroize]
+default-features = false
+optional = true
+version = "1.5"
+
+[dev-dependencies.rand]
+features = ["small_rng"]
+version = "0.9"
+
+[dev-dependencies.rand_chacha]
+version = "0.9"
+
+[dev-dependencies.rand_isaac]
+version = "0.4"
+
+[dev-dependencies.rand_xorshift]
+version = "0.4"
+
+[dev-dependencies.serde_test]
+version = "1.0"
+
+[features]
+default = ["std", "u64_digit"]
+fuzz = ["arbitrary", "smallvec/arbitrary"]
+i128 = []
+nightly = []
+prime = ["rand/std_rng"]
+std = ["num-integer/std", "num-traits/std", "smallvec/write", "rand/std", "serde/std"]
+u64_digit = []
+
+[lib]
+path = "src/lib.rs"
+
+[lints.rust.unexpected_cfgs]
+check-cfg = ["cfg(has_i128)"]
+level = "warn"
+priority = 0
+
+[package]
+authors = ["dignifiedquire <dignifiedquire@gmail.com>", "The Rust Project Developers"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["algorithms", "data-structures", "science"]
+description = "Big integer implementation for Rust"
+documentation = "https://docs.rs/num-bigint-dig"
+edition = "2021"
+homepage = "https://github.com/dignifiedquire/num-bigint"
+keywords = ["mathematics", "numerics", "bignum"]
+license = "MIT/Apache-2.0"
+name = "num-bigint-dig"
+readme = "README.md"
+repository = "https://github.com/dignifiedquire/num-bigint"
+rust-version = "1.65"
+version = "0.9.1"
+
+[package.metadata.docs.rs]
+features = ["std", "serde", "rand", "prime"]

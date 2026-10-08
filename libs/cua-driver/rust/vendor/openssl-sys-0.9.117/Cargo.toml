@@ -1,0 +1,64 @@
+[build-dependencies.bindgen]
+features = ["experimental"]
+optional = true
+version = "0.72.0"
+
+[build-dependencies.cc]
+version = "1.0.61"
+
+[build-dependencies.openssl-src]
+features = ["legacy"]
+optional = true
+version = "300.2.0"
+
+[build-dependencies.pkg-config]
+version = "0.3.9"
+
+[build-dependencies.vcpkg]
+version = "0.2.8"
+
+[dependencies.aws-lc-fips-sys]
+features = ["ssl", "bindgen"]
+optional = true
+version = "0.13"
+
+[dependencies.aws-lc-sys]
+features = ["ssl"]
+optional = true
+version = "0.41"
+
+[dependencies.bssl-sys]
+optional = true
+version = "0.1.0"
+
+[dependencies.libc]
+version = "0.2"
+
+[features]
+aws-lc = ["dep:aws-lc-sys"]
+aws-lc-fips = ["dep:aws-lc-fips-sys"]
+unstable_boringssl = ["bssl-sys"]
+vendored = ["openssl-src"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Alex Crichton <alex@alexcrichton.com>", "Steven Fackler <sfackler@gmail.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["cryptography", "external-ffi-bindings"]
+description = "FFI bindings to OpenSSL"
+edition = "2021"
+license = "MIT"
+name = "openssl-sys"
+readme = "README.md"
+repository = "https://github.com/rust-openssl/rust-openssl"
+rust-version = "1.80.0"
+version = "0.9.117"
+
+[package.metadata.pkg-config]
+openssl = "1.0.1"

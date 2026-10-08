@@ -1,0 +1,46 @@
+[dependencies.fnv]
+version = "1.0.5"
+
+[dependencies.nom]
+version = "1.0.0"
+
+[dependencies.serde]
+optional = true
+version = "1"
+
+[dev-dependencies.gnuplot]
+version = "0.0.23"
+
+[dev-dependencies.serde_derive]
+version = "1"
+
+[dev-dependencies.serde_json]
+version = "1"
+
+[dev-dependencies.serde_test]
+version = "1"
+
+[dev-dependencies.toml]
+version = "0.4.5"
+
+[features]
+default = []
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Norbert Pozar <bertapozar@gmail.com>"]
+description = "A simple math expression parser and evaluator."
+documentation = "https://docs.rs/meval"
+exclude = ["README.tpl", ".travis.yml"]
+homepage = "https://github.com/rekka/meval-rs"
+keywords = ["math", "parser", "expression", "formula", "evaluator"]
+license = "Unlicense/MIT"
+name = "meval"
+readme = "README.md"
+repository = "https://github.com/rekka/meval-rs"
+version = "0.2.0"
+
+[package.metadata.docs.rs]
+features = ["serde"]

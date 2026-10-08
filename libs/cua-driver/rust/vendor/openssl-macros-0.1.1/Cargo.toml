@@ -1,0 +1,19 @@
+[dependencies.proc-macro2]
+version = "1"
+
+[dependencies.quote]
+version = "1"
+
+[dependencies.syn]
+features = ["full"]
+version = "2"
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+description = "Internal macros used by the openssl crate."
+edition = "2018"
+license = "MIT/Apache-2.0"
+name = "openssl-macros"
+version = "0.1.1"

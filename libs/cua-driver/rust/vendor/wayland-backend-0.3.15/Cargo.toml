@@ -1,0 +1,77 @@
+[build-dependencies.cc]
+version = "1.0"
+
+[dependencies.downcast-rs]
+version = "1.2"
+
+[dependencies.log]
+optional = true
+version = "0.4"
+
+[dependencies.raw-window-handle]
+optional = true
+version = "0.5.0"
+
+[dependencies.rustix]
+features = ["event", "fs", "net", "process"]
+version = "1.0.2"
+
+[dependencies.rwh_06]
+optional = true
+package = "raw-window-handle"
+version = "0.6.0"
+
+[dependencies.scoped-tls]
+optional = true
+version = "1.0"
+
+[dependencies.smallvec]
+features = ["union", "const_generics", "const_new"]
+version = "1.9"
+
+[dependencies.wayland-sys]
+features = []
+version = "0.31.11"
+
+[dev-dependencies.concat-idents]
+version = "1.1"
+
+[dev-dependencies.env_logger]
+version = "0.11"
+
+[dev-dependencies.scoped-tls]
+version = "1.0"
+
+[features]
+client_system = ["wayland-sys/client", "dep:scoped-tls"]
+dlopen = ["wayland-sys/dlopen"]
+libwayland_client_1_23 = ["wayland-sys/libwayland_client_1_23"]
+libwayland_server_1_22 = ["wayland-sys/libwayland_server_1_22"]
+libwayland_server_1_23 = ["wayland-sys/libwayland_server_1_23", "libwayland_server_1_22"]
+server_system = ["wayland-sys/server", "dep:scoped-tls"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Elinor Berger <elinor@safaradeg.net>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["gui", "api-bindings"]
+description = "Low-level bindings to the Wayland protocol"
+documentation = "https://docs.rs/wayland-backend/"
+edition = "2021"
+keywords = ["wayland"]
+license = "MIT"
+name = "wayland-backend"
+readme = "README.md"
+repository = "https://github.com/smithay/wayland-rs"
+rust-version = "1.71"
+version = "0.3.15"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]

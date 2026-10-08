@@ -1,0 +1,29 @@
+[dev-dependencies.easy-parallel]
+version = "3.0.0"
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Stjepan Glavina <stjepang@gmail.com>", "The Rust Project Developers"]
+autobenches = false
+autobins = false
+autoexamples = false
+autotests = false
+categories = ["concurrency"]
+description = "Thread parking and unparking"
+documentation = "https://docs.rs/parking"
+edition = "2018"
+exclude = ["/.*"]
+homepage = "https://github.com/smol-rs/parking"
+keywords = ["park", "notify", "thread", "wake", "condition"]
+license = "Apache-2.0 OR MIT"
+name = "parking"
+readme = "README.md"
+repository = "https://github.com/smol-rs/parking"
+rust-version = "1.51"
+version = "2.2.1"
+
+[target."cfg(loom)".dependencies.loom]
+optional = true
+version = "0.7"

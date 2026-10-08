@@ -1,0 +1,41 @@
+[build-dependencies.pkg-config]
+version = "0.3.24"
+
+[dependencies.libc]
+version = "0.2"
+
+[features]
+all = ["dpms", "glx", "xcursor", "xf86vmode", "xfixes", "xft", "xinerama", "xinput", "xlib", "xlib_xcb", "xmu", "xrandr", "xrecord", "xrender", "xss", "xt", "xtest", "xtst", "dox"]
+dox = []
+dpms = []
+glx = []
+xcursor = []
+xf86vmode = []
+xfixes = []
+xft = []
+xinerama = []
+xinput = []
+xlib = []
+xlib_xcb = []
+xmu = []
+xrandr = []
+xrecord = ["xtst"]
+xrender = []
+xss = []
+xt = []
+xtest = ["xtst"]
+xtst = []
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["daggerbot <daggerbot@gmail.com>", "Erle Pereira <erle@erlepereira.com>", "AltF02 <contact@altf2.dev>"]
+description = "X11 library bindings for Rust"
+documentation = "https://docs.rs/x11"
+edition = "2021"
+license = "MIT"
+name = "x11"
+repository = "https://github.com/AltF02/x11-rs.git"
+resolver = "1"
+version = "2.21.0"

@@ -1,0 +1,23 @@
+[build-dependencies.autocfg]
+version = "1"
+
+[dev-dependencies.doc-comment]
+version = "0.3"
+
+[features]
+default = []
+unstable_const = []
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Gilad Naaman <gilad.naaman@gmail.com>"]
+categories = ["no-std"]
+description = "offset_of functionality for Rust structs."
+keywords = ["mem", "offset", "offset_of", "offsetof"]
+license = "MIT"
+name = "memoffset"
+readme = "README.md"
+repository = "https://github.com/Gilnaa/memoffset"
+version = "0.6.5"

@@ -1,0 +1,60 @@
+[dependencies.proc-macro-crate]
+version = "3.2.0"
+
+[dependencies.proc-macro2]
+version = "1.0.81"
+
+[dependencies.quote]
+version = "1.0.36"
+
+[dependencies.syn]
+features = ["extra-traits", "full"]
+version = "2.0.64"
+
+[dependencies.zvariant_utils]
+version = "3.4.0"
+
+[dev-dependencies.enumflags2]
+features = ["serde"]
+version = "0.7.9"
+
+[dev-dependencies.serde]
+features = ["derive"]
+version = "1.0.200"
+
+[dev-dependencies.serde_repr]
+version = "0.1.19"
+
+[features]
+default = []
+gvariant = ["zvariant_utils/gvariant"]
+
+[lib]
+path = "src/lib.rs"
+
+[lints.rust.unexpected_cfgs]
+check-cfg = ["cfg(tokio_unstable)"]
+level = "warn"
+priority = 0
+
+[package]
+authors = ["Zeeshan Ali Khan <zeeshanak@gnome.org>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["data-structures", "encoding", "parsing"]
+description = "D-Bus & GVariant encoding & decoding"
+edition = "2024"
+keywords = ["D-Bus", "DBus", "IPC", "GVariant"]
+license = "MIT"
+name = "zvariant_derive"
+readme = "README.md"
+repository = "https://github.com/z-galaxy/zbus/"
+rust-version = "1.87"
+version = "5.12.0"
+
+[package.metadata.docs.rs]
+all-features = true
+targets = ["x86_64-unknown-linux-gnu", "x86_64-pc-windows-gnu", "x86_64-apple-darwin", "x86_64-unknown-freebsd", "x86_64-unknown-netbsd", "aarch64-linux-android"]

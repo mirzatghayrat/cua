@@ -1,0 +1,36 @@
+[badges.maintenance]
+status = "actively-developed"
+
+[dependencies.zbus_xml]
+version = "5.0.2"
+
+[dependencies.zvariant]
+version = "5.1"
+
+[dev-dependencies.tempfile]
+version = "3"
+
+[dev-dependencies.version-sync]
+version = "0.9"
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Luuk van der Duim <luukvanderduim@gmail.com>", "Tait Hoyem<tait@tait.tech>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+description = "Keep types in lockstep with DBus XML definitions"
+documentation = "https://docs.rs/zbus-lockstep"
+edition = "2021"
+include = ["src/**/*", "LICENSE-MIT", "README.md"]
+keywords = ["type-safety", "zbus", "DBus", "IPC"]
+license = "MIT"
+name = "zbus-lockstep"
+publish = true
+readme = "README.md"
+repository = "https://github.com/luukvanderduim/zbus-lockstep"
+version = "0.5.2"

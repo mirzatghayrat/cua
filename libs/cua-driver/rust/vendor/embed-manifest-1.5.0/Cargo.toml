@@ -1,0 +1,28 @@
+[dev-dependencies.object]
+default-features = false
+features = ["read_core", "coff"]
+version = "0.37.3"
+
+[dev-dependencies.tempfile]
+version = "3.23.0"
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Carey Evans <carey@carey.geek.nz>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["development-tools::build-utils"]
+description = "Build script library to easily embed a Windows manifest."
+edition = "2024"
+keywords = ["build", "manifest", "windows"]
+license = "MIT"
+name = "embed-manifest"
+readme = "README.md"
+repository = "https://codeberg.org/carey/embed-manifest"
+rust-version = "1.85.0"
+version = "1.5.0"

@@ -1,0 +1,100 @@
+[build-dependencies.autocfg]
+version = "1"
+
+[dependencies.cfg-if]
+version = "1"
+
+[dependencies.concurrent-queue]
+version = "2.2.0"
+
+[dependencies.futures-io]
+default-features = false
+features = ["std"]
+version = "0.3.28"
+
+[dependencies.futures-lite]
+default-features = false
+version = "2.0.0"
+
+[dependencies.parking]
+version = "2.0.0"
+
+[dependencies.polling]
+version = "3.4.0"
+
+[dependencies.rustix]
+default-features = false
+features = ["fs", "net", "std"]
+version = "1.0.7"
+
+[dependencies.slab]
+version = "0.4.2"
+
+[dependencies.tracing]
+default-features = false
+optional = true
+version = "0.1.37"
+
+[dev-dependencies.async-channel]
+version = "2.0.0"
+
+[dev-dependencies.async-net]
+version = "2.0.0"
+
+[dev-dependencies.blocking]
+version = "1"
+
+[dev-dependencies.criterion]
+default-features = false
+features = ["cargo_bench_support"]
+version = "0.7"
+
+[dev-dependencies.getrandom]
+version = "0.3"
+
+[dev-dependencies.signal-hook]
+version = "0.3"
+
+[dev-dependencies.tempfile]
+version = "3"
+
+[lib]
+path = "src/lib.rs"
+
+[lints.rust.unexpected_cfgs]
+check-cfg = ["cfg(polling_test_poll_backend)", "cfg(async_io_no_pipe)"]
+level = "warn"
+priority = 0
+
+[package]
+authors = ["Stjepan Glavina <stjepang@gmail.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["asynchronous", "network-programming", "os"]
+description = "Async I/O and timers"
+edition = "2021"
+exclude = ["/.*"]
+keywords = ["mio", "epoll", "kqueue", "iocp"]
+license = "Apache-2.0 OR MIT"
+name = "async-io"
+readme = "README.md"
+repository = "https://github.com/smol-rs/async-io"
+rust-version = "1.71"
+version = "2.6.0"
+
+[target.'cfg(target_os = "linux")'.dev-dependencies.inotify]
+default-features = false
+version = "0.11.0"
+
+[target.'cfg(target_os = "linux")'.dev-dependencies.timerfd]
+version = "1"
+
+[target."cfg(windows)".dependencies.windows-sys]
+features = ["Win32_Foundation"]
+version = "0.61"
+
+[target."cfg(windows)".dev-dependencies.uds_windows]
+version = "1"

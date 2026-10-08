@@ -1,0 +1,64 @@
+[dependencies.bitvec]
+version = "1.0.0"
+
+[dependencies.cfg-if]
+version = "1.0"
+
+[dependencies.futures-core]
+optional = true
+version = "0.3"
+
+[dependencies.libc]
+version = "0.2.121"
+
+[dependencies.nix]
+version = "0.23"
+
+[dependencies.paste]
+optional = true
+version = "1.0"
+
+[dependencies.serde_1]
+features = ["derive"]
+optional = true
+package = "serde"
+version = "1.0"
+
+[dependencies.thiserror]
+version = "1"
+
+[dependencies.tokio_1]
+features = ["fs", "net"]
+optional = true
+package = "tokio"
+version = "1.17"
+
+[dev-dependencies.itertools]
+version = "0.10"
+
+[dev-dependencies.tokio_1]
+features = ["macros", "rt-multi-thread"]
+package = "tokio"
+version = "1.17"
+
+[features]
+serde = ["serde_1", "paste"]
+tokio = ["tokio_1", "futures-core"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Corey Richardson <corey@octayn.net>"]
+description = "evdev interface for Linux"
+documentation = "https://docs.rs/evdev"
+edition = "2021"
+license = "Apache-2.0 OR MIT"
+name = "evdev"
+readme = "README.md"
+repository = "https://github.com/cmr/evdev"
+version = "0.12.2"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]

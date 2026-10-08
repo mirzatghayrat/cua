@@ -1,0 +1,58 @@
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Sebastian Wiesner <sebastian@swsnr.de>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["os", "api-bindings"]
+description = "gethostname for all platforms"
+documentation = "https://docs.rs/gethostname"
+edition = "2021"
+homepage = "https://codeberg.org/swsnr/gethostname.rs"
+keywords = ["gethostname", "DNS", "hostname"]
+license = "Apache-2.0"
+name = "gethostname"
+readme = "README.md"
+repository = "https://codeberg.org/swsnr/gethostname.rs.git"
+rust-version = "1.71"
+version = "1.1.0"
+
+[package.metadata.release]
+pre-release-commit-message = "Release {{version}}"
+tag-message = "Version {{tag_name}}"
+tag-prefix = ""
+
+[[package.metadata.release.pre-release-replacements]]
+exactly = 1
+file = "CHANGELOG.md"
+replace = """
+## [Unreleased]
+
+## [{{version}}] – {{date}}"""
+search = '## \[Unreleased\]'
+
+[[package.metadata.release.pre-release-replacements]]
+exactly = 1
+file = "CHANGELOG.md"
+replace = "{{tag_name}}"
+search = "HEAD"
+
+[[package.metadata.release.pre-release-replacements]]
+exactly = 1
+file = "CHANGELOG.md"
+replace = """
+[Unreleased]: https://codeberg.org/swsnr/gethostname.rs/compare/{{tag_name}}...HEAD
+[{{version}}]: """
+search = '\[Unreleased\]: '
+
+[target."cfg(not(windows))".dependencies.rustix]
+default-features = false
+features = ["system"]
+version = "1.0.3"
+
+[target."cfg(windows)".dependencies.windows-link]
+version = "0.2.1"

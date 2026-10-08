@@ -1,0 +1,85 @@
+[dependencies.aes]
+optional = true
+version = "0.8"
+
+[dependencies.cbc]
+features = ["block-padding", "alloc"]
+optional = true
+version = "0.1"
+
+[dependencies.futures-util]
+version = "0.3"
+
+[dependencies.generic-array]
+version = "0.14"
+
+[dependencies.getrandom]
+version = "0.2"
+
+[dependencies.hkdf]
+optional = true
+version = "0.12.0"
+
+[dependencies.num]
+version = "0.4.0"
+
+[dependencies.once_cell]
+version = "1"
+
+[dependencies.openssl]
+optional = true
+version = "^0.10.40"
+
+[dependencies.serde]
+features = ["derive"]
+version = "1.0.103"
+
+[dependencies.sha2]
+optional = true
+version = "0.10.0"
+
+[dependencies.zbus]
+default-features = false
+features = ["blocking-api"]
+version = "5"
+
+[dev-dependencies.test-with]
+default-features = false
+version = "0.8"
+
+[dev-dependencies.tokio]
+features = ["rt", "macros"]
+version = "1"
+
+[features]
+crypto-openssl = ["dep:openssl"]
+crypto-rust = ["dep:aes", "dep:cbc", "dep:sha2", "dep:hkdf"]
+rt-async-io-crypto-openssl = ["zbus/async-io", "crypto-openssl"]
+rt-async-io-crypto-rust = ["zbus/async-io", "crypto-rust"]
+rt-tokio-crypto-openssl = ["zbus/tokio", "crypto-openssl"]
+rt-tokio-crypto-rust = ["zbus/tokio", "crypto-rust"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Walther Chen <walther.chen@gmail.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+description = "Library to interface with Secret Service API"
+documentation = "https://docs.rs/secret-service"
+edition = "2021"
+homepage = "https://github.com/hwchen/secret-service-rs.git"
+keywords = ["secret-service", "password", "linux", "keychain"]
+license = "MIT OR Apache-2.0"
+name = "secret-service"
+readme = "README.md"
+repository = "https://github.com/hwchen/secret-service-rs.git"
+rust-version = "1.77.0"
+version = "5.1.0"
+
+[package.metadata.docs.rs]
+features = ["rt-tokio-crypto-rust"]

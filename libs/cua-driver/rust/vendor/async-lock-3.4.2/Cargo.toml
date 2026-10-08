@@ -1,0 +1,61 @@
+[dependencies.event-listener]
+default-features = false
+version = "5.0.0"
+
+[dependencies.event-listener-strategy]
+default-features = false
+version = "0.5.0"
+
+[dependencies.pin-project-lite]
+version = "0.2.11"
+
+[dev-dependencies.fastrand]
+version = "2.0.0"
+
+[dev-dependencies.flume]
+version = "0.12.0"
+
+[dev-dependencies.futures-lite]
+version = "2.0.0"
+
+[dev-dependencies.waker-fn]
+version = "1.1.0"
+
+[features]
+default = ["std"]
+loom = ["event-listener/loom", "dep:loom"]
+std = ["event-listener/std", "event-listener-strategy/std"]
+
+[lib]
+path = "src/lib.rs"
+
+[lints.rust.unexpected_cfgs]
+check-cfg = ["cfg(loom)"]
+level = "warn"
+priority = 0
+
+[package]
+authors = ["Stjepan Glavina <stjepang@gmail.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["asynchronous", "concurrency"]
+description = "Async synchronization primitives"
+edition = "2021"
+exclude = ["/.*"]
+keywords = ["lock", "mutex", "rwlock", "semaphore", "barrier"]
+license = "Apache-2.0 OR MIT"
+name = "async-lock"
+readme = "README.md"
+repository = "https://github.com/smol-rs/async-lock"
+rust-version = "1.85"
+version = "3.4.2"
+
+[target."cfg(loom)".dependencies.loom]
+optional = true
+version = "0.7"
+
+[target.'cfg(target_family = "wasm")'.dev-dependencies.wasm-bindgen-test]
+version = "0.3"

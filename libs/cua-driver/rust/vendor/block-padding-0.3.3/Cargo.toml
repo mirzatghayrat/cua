@@ -1,0 +1,26 @@
+[dependencies.generic-array]
+version = "0.14"
+
+[features]
+std = []
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["RustCrypto Developers"]
+categories = ["cryptography", "no-std"]
+description = "Padding and unpadding of messages divided into blocks."
+documentation = "https://docs.rs/block-padding"
+edition = "2021"
+keywords = ["padding", "pkcs7", "ansix923", "iso7816"]
+license = "MIT OR Apache-2.0"
+name = "block-padding"
+repository = "https://github.com/RustCrypto/utils"
+resolver = "1"
+rust-version = "1.56"
+version = "0.3.3"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]

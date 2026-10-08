@@ -1,0 +1,39 @@
+[dependencies.once_cell]
+version = "1.5.2"
+
+[dependencies.rustix]
+default-features = false
+features = ["alloc", "fs"]
+version = "1.0.0"
+
+[dev-dependencies.rustix]
+default-features = false
+features = ["std"]
+version = "1.0.0"
+
+[features]
+default = ["std"]
+std = ["rustix/std"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Dan Gohman <dev@sunfishcode.online>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["os::unix-apis"]
+description = "Utilities for opening Linux procfs files and directories"
+documentation = "https://docs.rs/rustix-linux-procfs"
+edition = "2021"
+include = ["src", "Cargo.toml", "COPYRIGHT", "LICENSE*", "/*.md"]
+keywords = ["linux", "procfs"]
+license = "Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT"
+name = "rustix-linux-procfs"
+readme = "README.md"
+repository = "https://github.com/sunfishcode/rustix-linux-procfs"
+rust-version = "1.63"
+version = "0.1.1"

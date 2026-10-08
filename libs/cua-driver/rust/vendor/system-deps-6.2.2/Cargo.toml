@@ -1,0 +1,41 @@
+[dependencies.cfg-expr]
+features = ["targets"]
+version = "0.15.5"
+
+[dependencies.heck]
+version = "0.5"
+
+[dependencies.pkg-config]
+version = "0.3.23"
+
+[dependencies.toml]
+default-features = false
+features = ["parse"]
+version = "0.8"
+
+[dependencies.version-compare]
+version = "0.2"
+
+[dev-dependencies.assert_matches]
+version = "1.5"
+
+[dev-dependencies.itertools]
+version = "0.12"
+
+[dev-dependencies.lazy_static]
+version = "1"
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Guillaume Desmottes <guillaume.desmottes@collabora.com>", "Josh Triplett <josh@joshtriplett.org>"]
+description = "Discover and configure system dependencies from declarative dependencies in Cargo.toml"
+documentation = "https://docs.rs/system-deps/"
+edition = "2018"
+keywords = ["pkg-config", "build-dependencies", "build-depends", "manifest", "metadata"]
+license = "MIT OR Apache-2.0"
+name = "system-deps"
+readme = "README.md"
+repository = "https://github.com/gdesmott/system-deps"
+version = "6.2.2"

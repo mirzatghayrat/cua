@@ -1,0 +1,86 @@
+[badges.codecov]
+repository = "Smithay/calloop"
+
+[dependencies.async-task]
+optional = true
+version = "4.4.0"
+
+[dependencies.bitflags]
+version = "2.4"
+
+[dependencies.futures-core]
+optional = true
+version = "0.3.31"
+
+[dependencies.futures-io]
+optional = true
+version = "0.3.5"
+
+[dependencies.pin-utils]
+optional = true
+version = "0.1.0"
+
+[dependencies.polling]
+version = "3.0.0"
+
+[dependencies.rustix]
+default-features = false
+features = ["event", "fs", "pipe", "std"]
+version = "1.0.0"
+
+[dependencies.slab]
+version = "0.4.8"
+
+[dependencies.tracing]
+default-features = false
+features = ["log"]
+version = "0.1.40"
+
+[dev-dependencies.criterion]
+version = "0.4"
+
+[dev-dependencies.futures]
+version = "0.3.5"
+
+[dev-dependencies.rustix]
+default-features = false
+features = ["net"]
+version = "1.0.0"
+
+[features]
+block_on = ["pin-utils"]
+executor = ["async-task"]
+nightly_coverage = []
+signals = ["nix"]
+stream = ["futures-core"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Elinor Berger <elinor@safaradeg.net>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+description = "A callback-based event loop"
+documentation = "https://docs.rs/calloop/"
+edition = "2018"
+keywords = ["events", "loop", "callback", "eventloop", "unix"]
+license = "MIT"
+name = "calloop"
+readme = "README.md"
+repository = "https://github.com/Smithay/calloop"
+rust-version = "1.71.1"
+version = "0.14.4"
+
+[package.metadata.docs.rs]
+features = ["block_on", "executor", "signals", "stream"]
+rustdoc-args = ["--cfg", "docsrs"]
+
+[target."cfg(unix)".dependencies.nix]
+default-features = false
+features = ["signal"]
+optional = true
+version = "0.31"

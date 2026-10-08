@@ -1,0 +1,27 @@
+[dependencies.windows-link]
+default-features = false
+version = "0.1.1"
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Microsoft"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["os::windows-apis"]
+description = "Windows threading"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+name = "windows-threading"
+readme = "readme.md"
+repository = "https://github.com/microsoft/windows-rs"
+rust-version = "1.74"
+version = "0.1.0"
+
+[package.metadata.docs.rs]
+default-target = "x86_64-pc-windows-msvc"
+targets = []

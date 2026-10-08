@@ -1,0 +1,67 @@
+[dependencies.proc-macro-crate]
+version = "3.2.0"
+
+[dependencies.proc-macro2]
+version = "1.0.81"
+
+[dependencies.quote]
+version = "1.0.36"
+
+[dependencies.syn]
+features = ["extra-traits", "full", "extra-traits", "fold", "full"]
+version = "2.0.64"
+
+[dependencies.zbus_names]
+version = "4.3.2"
+
+[dependencies.zvariant]
+version = "5.12.0"
+
+[dependencies.zvariant_utils]
+version = "3.4.0"
+
+[dev-dependencies.async-io]
+version = "2.3.2"
+
+[dev-dependencies.futures-util]
+default-features = false
+version = "0.3.31"
+
+[dev-dependencies.serde]
+features = ["derive"]
+version = "1.0.200"
+
+[features]
+blocking-api = []
+default = []
+gvariant = ["zvariant/gvariant", "zvariant_utils/gvariant"]
+
+[lib]
+path = "src/lib.rs"
+
+[lints.rust.unexpected_cfgs]
+check-cfg = ["cfg(tokio_unstable)"]
+level = "warn"
+priority = 0
+
+[package]
+authors = ["Marc-André Lureau <marcandre.lureau@redhat.com>", "Zeeshan Ali Khan <zeeshanak@gnome.org>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["data-structures", "encoding", "parsing"]
+description = "proc-macros for zbus"
+edition = "2024"
+keywords = ["D-Bus", "DBus", "IPC"]
+license = "MIT"
+name = "zbus_macros"
+readme = "README.md"
+repository = "https://github.com/z-galaxy/zbus/"
+rust-version = "1.87"
+version = "5.16.0"
+
+[package.metadata.docs.rs]
+all-features = true
+targets = ["x86_64-unknown-linux-gnu", "x86_64-pc-windows-gnu", "x86_64-apple-darwin", "x86_64-unknown-freebsd", "x86_64-unknown-netbsd", "aarch64-linux-android"]

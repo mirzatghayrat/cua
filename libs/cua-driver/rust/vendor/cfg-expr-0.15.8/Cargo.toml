@@ -1,0 +1,31 @@
+[dependencies.smallvec]
+version = "1.8"
+
+[dependencies.target-lexicon]
+optional = true
+version = "0.12.11"
+
+[dev-dependencies.similar-asserts]
+version = "1.1"
+
+[features]
+default = []
+targets = ["target-lexicon"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Embark <opensource@embark-studios.com>", "Jake Shadle <jake.shadle@embark-studios.com>"]
+categories = ["parser-implementations"]
+description = "A parser and evaluator for Rust `cfg()` expressions."
+documentation = "https://docs.rs/cfg-expr"
+edition = "2021"
+homepage = "https://github.com/EmbarkStudios/cfg-expr"
+keywords = ["cargo", "rustc", "cfg"]
+license = "MIT OR Apache-2.0"
+name = "cfg-expr"
+readme = "README.md"
+repository = "https://github.com/EmbarkStudios/cfg-expr"
+rust-version = "1.70.0"
+version = "0.15.8"

@@ -1,0 +1,71 @@
+[dependencies.async-io]
+version = "2.3.0"
+
+[dependencies.cfg-if]
+version = "1.0"
+
+[dependencies.event-listener]
+version = "5.1.0"
+
+[dependencies.futures-lite]
+version = "2.0.0"
+
+[dependencies.tracing]
+default-features = false
+optional = true
+version = "0.1.40"
+
+[dev-dependencies.async-executor]
+version = "1.5.1"
+
+[lib]
+path = "src/lib.rs"
+
+[lints.rust.unexpected_cfgs]
+check-cfg = ["cfg(async_process_force_signal_backend)"]
+level = "warn"
+priority = 0
+
+[package]
+authors = ["Stjepan Glavina <stjepang@gmail.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["asynchronous", "os"]
+description = "Async interface for working with processes"
+edition = "2021"
+exclude = ["/.*"]
+keywords = ["process", "spawn", "command", "subprocess", "child"]
+license = "Apache-2.0 OR MIT"
+name = "async-process"
+readme = "README.md"
+repository = "https://github.com/smol-rs/async-process"
+rust-version = "1.71"
+version = "2.5.0"
+
+[target.'cfg(any(windows, target_os = "linux"))'.dependencies.async-channel]
+version = "2.0.0"
+
+[target.'cfg(any(windows, target_os = "linux"))'.dependencies.async-task]
+version = "4.7.0"
+
+[target."cfg(unix)".dependencies.async-lock]
+version = "3.0.0"
+
+[target."cfg(unix)".dependencies.async-signal]
+version = "0.2.3"
+
+[target."cfg(unix)".dependencies.rustix]
+default-features = false
+features = ["std", "fs", "process"]
+version = "1.0"
+
+[target."cfg(windows)".dependencies.blocking]
+version = "1.0.0"
+
+[target."cfg(windows)".dev-dependencies.windows-sys]
+default-features = false
+features = ["Win32_Foundation", "Win32_System_Threading"]
+version = "0.61"

@@ -1,0 +1,42 @@
+[dependencies.memchr]
+version = "2.0"
+
+[dependencies.nom]
+version = "8.0"
+
+[dependencies.petgraph]
+default-features = false
+version = "0.8.0"
+
+[dependencies.tree_magic_db]
+optional = true
+version = "3.0"
+
+[dev-dependencies.bencher]
+version = "0.1.0"
+
+[features]
+with-gpl-data = ["dep:tree_magic_db"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Matt Brubeck <mbrubeck@limpet.net>", "Allison Hancock <aahancoc@umich.edu>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["parser-implementations", "filesystem"]
+description = "Determines the MIME type of a file by traversing a filetype tree."
+documentation = "https://docs.rs/tree_magic_mini/"
+edition = "2024"
+exclude = ["tests/*", "benches/*/"]
+keywords = ["mime", "filesystem", "media-types"]
+license = "MIT"
+name = "tree_magic_mini"
+readme = "README.md"
+repository = "https://github.com/mbrubeck/tree_magic/"
+rust-version = "1.85"
+version = "3.2.2"

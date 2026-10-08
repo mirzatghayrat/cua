@@ -1,0 +1,94 @@
+[dependencies.async-io]
+optional = true
+version = "2.6.0"
+
+[dependencies.calloop]
+optional = true
+version = "0.14.0"
+
+[dependencies.enumflags2]
+version = "0.7.12"
+
+[dependencies.futures-util]
+optional = true
+version = "0.3.28"
+
+[dependencies.log]
+version = "0.4.29"
+
+[dependencies.rustix]
+features = ["event", "fs", "net", "time"]
+version = "1.0.7"
+
+[dependencies.tokio]
+features = ["net"]
+optional = true
+version = "1.31.0"
+
+[dev-dependencies.ashpd]
+default-features = false
+features = ["async-io", "input_capture", "remote_desktop", "screencast"]
+version = "0.13.3"
+
+[dev-dependencies.futures-executor]
+version = "0.3.29"
+
+[dev-dependencies.once_cell]
+version = "1.17.1"
+
+[dev-dependencies.pollster]
+version = "0.4.0"
+
+[dev-dependencies.signal-hook]
+version = "0.4.1"
+
+[dev-dependencies.tokio]
+features = ["rt", "macros"]
+version = "1.31.0"
+
+[dev-dependencies.xkbcommon]
+version = "0.9.0"
+
+[features]
+async-io = ["dep:async-io", "dep:futures-util"]
+calloop = ["dep:calloop"]
+tokio = ["dep:tokio", "dep:futures-util"]
+
+[lib]
+path = "src/lib.rs"
+
+[lints.clippy]
+implicit_clone = "warn"
+pedantic = "warn"
+str_to_string = "warn"
+
+[lints.clippy.cast_possible_truncation]
+level = "allow"
+priority = 1
+
+[lints.clippy.cast_possible_wrap]
+level = "allow"
+priority = 1
+
+[lints.rust]
+missing_docs = "warn"
+
+[package]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+description = "Pure Rust implementation of libei/libeis protocol."
+edition = "2021"
+keywords = ["libei", "libeis", "wayland"]
+license = "MIT"
+name = "reis"
+readme = "README.md"
+repository = "https://github.com/ids1024/reis"
+rust-version = "1.71.1"
+version = "0.7.0"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]

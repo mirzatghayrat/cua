@@ -1,0 +1,59 @@
+[dependencies.fastrand]
+default-features = false
+optional = true
+version = "2.0.0"
+
+[dependencies.futures-core]
+default-features = false
+version = "0.3.5"
+
+[dependencies.futures-io]
+optional = true
+version = "0.3.5"
+
+[dependencies.memchr]
+optional = true
+version = "2.3.3"
+
+[dependencies.parking]
+optional = true
+version = "2.2.0"
+
+[dependencies.pin-project-lite]
+version = "0.2.0"
+
+[dev-dependencies.spin_on]
+version = "0.1.0"
+
+[dev-dependencies.waker-fn]
+version = "1.0.0"
+
+[features]
+alloc = []
+default = ["race", "std"]
+race = ["fastrand"]
+std = ["alloc", "fastrand/std", "futures-io", "parking"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Stjepan Glavina <stjepang@gmail.com>", "Contributors to futures-rs"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["asynchronous", "concurrency"]
+description = "Futures, streams, and async I/O combinators"
+documentation = "https://docs.rs/futures-lite"
+edition = "2021"
+exclude = ["/.*"]
+homepage = "https://github.com/smol-rs/futures-lite"
+keywords = ["asynchronous", "futures", "async"]
+license = "Apache-2.0 OR MIT"
+name = "futures-lite"
+readme = "README.md"
+repository = "https://github.com/smol-rs/futures-lite"
+rust-version = "1.60"
+version = "2.6.1"

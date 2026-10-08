@@ -1,0 +1,47 @@
+[dependencies.async-channel]
+version = "2.0.0"
+
+[dependencies.async-task]
+version = "4.4.0"
+
+[dependencies.futures-io]
+default-features = false
+features = ["std"]
+version = "0.3.28"
+
+[dependencies.futures-lite]
+default-features = false
+version = "2.0.0"
+
+[dependencies.piper]
+version = "0.2.0"
+
+[dependencies.tracing]
+default-features = false
+optional = true
+version = "0.1.37"
+
+[dev-dependencies.futures-lite]
+version = "2.0.0"
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Stjepan Glavina <stjepang@gmail.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["asynchronous", "concurrency"]
+description = "A thread pool for isolating blocking I/O in async programs"
+edition = "2021"
+exclude = ["/.*"]
+keywords = ["async", "file", "stdio", "stdin", "process"]
+license = "Apache-2.0 OR MIT"
+name = "blocking"
+readme = "README.md"
+repository = "https://github.com/smol-rs/blocking"
+rust-version = "1.63"
+version = "1.6.2"

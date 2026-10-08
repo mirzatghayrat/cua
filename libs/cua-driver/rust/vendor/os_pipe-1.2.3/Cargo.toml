@@ -1,0 +1,30 @@
+[features]
+io_safety = []
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Jack O'Connor"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+description = "a cross-platform library for opening OS pipes"
+documentation = "https://docs.rs/os_pipe"
+edition = "2021"
+keywords = ["pipe", "pipe2", "createpipe", "dup"]
+license = "MIT"
+name = "os_pipe"
+readme = "README.md"
+repository = "https://github.com/oconnor663/os_pipe.rs"
+rust-version = "1.63"
+version = "1.2.3"
+
+[target."cfg(not(windows))".dependencies.libc]
+version = "0.2.62"
+
+[target."cfg(windows)".dependencies.windows-sys]
+features = ["Win32_Foundation", "Win32_System_Pipes", "Win32_Security"]
+version = ">=0.28, <=0.61"

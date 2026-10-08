@@ -1,0 +1,62 @@
+[dependencies.concurrent-queue]
+default-features = false
+version = "2.5"
+
+[dependencies.event-listener-strategy]
+default-features = false
+version = "0.5.4"
+
+[dependencies.futures-core]
+default-features = false
+version = "0.3.5"
+
+[dependencies.pin-project-lite]
+version = "0.2.11"
+
+[dependencies.portable-atomic]
+default-features = false
+features = ["require-cas"]
+optional = true
+version = "1"
+
+[dependencies.portable-atomic-util]
+default-features = false
+features = ["alloc"]
+optional = true
+version = "0.2"
+
+[dev-dependencies.easy-parallel]
+version = "3"
+
+[dev-dependencies.futures-lite]
+version = "2"
+
+[features]
+default = ["std"]
+portable-atomic = ["concurrent-queue/portable-atomic", "event-listener-strategy/portable-atomic", "dep:portable-atomic-util", "dep:portable-atomic"]
+std = ["concurrent-queue/std", "event-listener-strategy/std"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Stjepan Glavina <stjepang@gmail.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["asynchronous", "concurrency"]
+description = "Async multi-producer multi-consumer channel"
+edition = "2021"
+exclude = ["/.*"]
+keywords = ["mpmc", "mpsc", "spmc", "chan", "futures"]
+license = "Apache-2.0 OR MIT"
+name = "async-channel"
+readme = "README.md"
+repository = "https://github.com/smol-rs/async-channel"
+rust-version = "1.60"
+version = "2.5.0"
+
+[target.'cfg(target_family = "wasm")'.dev-dependencies.wasm-bindgen-test]
+version = "0.3.37"

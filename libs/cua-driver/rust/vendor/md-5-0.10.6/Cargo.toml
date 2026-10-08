@@ -1,0 +1,40 @@
+[dependencies.cfg-if]
+version = "1.0"
+
+[dependencies.digest]
+version = "0.10.7"
+
+[dev-dependencies.digest]
+features = ["dev"]
+version = "0.10.7"
+
+[dev-dependencies.hex-literal]
+version = "0.2.2"
+
+[features]
+asm = ["md5-asm"]
+default = ["std"]
+force-soft = []
+loongarch64_asm = []
+oid = ["digest/oid"]
+std = ["digest/std"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["RustCrypto Developers"]
+categories = ["cryptography", "no-std"]
+description = "MD5 hash function"
+documentation = "https://docs.rs/md-5"
+edition = "2018"
+keywords = ["crypto", "md5", "hash", "digest"]
+license = "MIT OR Apache-2.0"
+name = "md-5"
+readme = "README.md"
+repository = "https://github.com/RustCrypto/hashes"
+version = "0.10.6"
+
+[target.'cfg(any(target_arch = "x86", target_arch = "x86_64"))'.dependencies.md5-asm]
+optional = true
+version = "0.5"

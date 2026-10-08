@@ -1,0 +1,39 @@
+[dependencies.async-lock]
+version = "3.0.0"
+
+[dependencies.blocking]
+version = "1.3.0"
+
+[dependencies.futures-lite]
+version = "2.0.0"
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Stjepan Glavina <stjepang@gmail.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["asynchronous", "concurrency"]
+description = "Async filesystem primitives"
+documentation = "https://docs.rs/async-fs"
+edition = "2021"
+exclude = ["/.*"]
+homepage = "https://github.com/smol-rs/async-fs"
+keywords = ["asynchronous", "file", "filesystem", "io"]
+license = "Apache-2.0 OR MIT"
+name = "async-fs"
+readme = "README.md"
+repository = "https://github.com/smol-rs/async-fs"
+rust-version = "1.71"
+version = "2.2.0"
+
+[target."cfg(unix)".dev-dependencies.libc]
+version = "0.2.78"
+
+[target."cfg(windows)".dev-dependencies.windows-sys]
+features = ["Win32_Storage_FileSystem"]
+version = "0.61"

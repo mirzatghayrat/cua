@@ -1,0 +1,65 @@
+[dependencies.atomic-waker]
+version = "1.1.0"
+
+[dependencies.fastrand]
+default-features = false
+version = "2.0.0"
+
+[dependencies.futures-io]
+optional = true
+version = "0.3.28"
+
+[dependencies.portable-atomic-util]
+features = ["alloc"]
+optional = true
+version = "0.2.0"
+
+[dependencies.portable_atomic_crate]
+default-features = false
+optional = true
+package = "portable-atomic"
+version = "1.2.0"
+
+[dev-dependencies.async-channel]
+version = "2.0.0"
+
+[dev-dependencies.async-executor]
+version = "1.5.1"
+
+[dev-dependencies.async-io]
+version = "2.0.0"
+
+[dev-dependencies.criterion]
+default-features = false
+features = ["cargo_bench_support"]
+version = "0.8"
+
+[dev-dependencies.easy-parallel]
+version = "3.2.0"
+
+[dev-dependencies.futures-lite]
+version = "2.0.0"
+
+[features]
+default = ["std"]
+portable-atomic = ["atomic-waker/portable-atomic", "portable_atomic_crate", "portable-atomic-util"]
+std = ["fastrand/std", "futures-io"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Stjepan Glavina <stjepang@gmail.com>", "John Nunley <dev@notgull.net>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+description = "An asynchronous single-consumer single-producer pipe for bytes."
+edition = "2018"
+license = "MIT OR Apache-2.0"
+name = "piper"
+readme = "README.md"
+repository = "https://github.com/smol-rs/piper"
+rust-version = "1.36"
+version = "0.2.5"

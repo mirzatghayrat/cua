@@ -1,0 +1,70 @@
+[dependencies.cfg-if]
+version = "1.0.0"
+
+[dependencies.futures-core]
+version = "0.3.26"
+
+[dev-dependencies.async-io]
+version = "2.0.0"
+
+[dev-dependencies.fastrand]
+version = "2.0.1"
+
+[dev-dependencies.futures-lite]
+version = "2.3.0"
+
+[dev-dependencies.signal-hook]
+version = "0.4.1"
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["John Nunley <dev@notgull.net>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["asynchronous", "concurrency", "os"]
+description = "Async signal handling"
+edition = "2021"
+exclude = ["/.*"]
+keywords = ["async", "signal", "signal-hook", "signal-hook-registry"]
+license = "Apache-2.0 OR MIT"
+name = "async-signal"
+readme = "README.md"
+repository = "https://github.com/smol-rs/async-signal"
+rust-version = "1.85"
+version = "0.2.14"
+
+[target."cfg(unix)".dependencies.async-io]
+version = "2.0.0"
+
+[target."cfg(unix)".dependencies.futures-io]
+version = "0.3.26"
+
+[target."cfg(unix)".dependencies.rustix]
+default-features = false
+features = ["process", "std"]
+version = "1.0.7"
+
+[target."cfg(unix)".dependencies.signal-hook-registry]
+version = "1.4.0"
+
+[target."cfg(unix)".dev-dependencies.libc]
+version = "0.2.139"
+
+[target."cfg(windows)".dependencies.async-lock]
+version = "3.3.0"
+
+[target."cfg(windows)".dependencies.atomic-waker]
+version = "1.1.1"
+
+[target."cfg(windows)".dependencies.slab]
+version = "0.4.8"
+
+[target."cfg(windows)".dependencies.windows-sys]
+default-features = false
+features = ["Win32_Foundation", "Win32_System_Console"]
+version = "0.61"

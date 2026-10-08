@@ -1,0 +1,51 @@
+[dependencies.keyring-core]
+version = "1"
+
+[dependencies.log]
+version = "0.4"
+
+[dependencies.security-framework]
+optional = true
+version = "3.7"
+
+[dev-dependencies.env_logger]
+version = "0.11"
+
+[dev-dependencies.fastrand]
+version = "2"
+
+[dev-dependencies.linkme]
+version = "0.3"
+
+[dev-dependencies.sudo]
+version = "0.6"
+
+[features]
+keychain = ["security-framework"]
+protected = ["security-framework/OSX_10_15"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Daniel Brotsky <dev@brotsky.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+description = "Apple-native credential store for keyring"
+edition = "2024"
+exclude = [".github"]
+homepage = "https://github.com/open-source-cooperative/keyring-rs/wiki/Keyring"
+keywords = ["keyring", "credential", "protected-data", "keychain"]
+license = "MIT OR Apache-2.0"
+name = "apple-native-keyring-store"
+readme = "README.md"
+repository = "https://github.com/open-source-cooperative/apple-native-keyring-store.git"
+rust-version = "1.85"
+version = "1.0.2"
+
+[package.metadata.docs.rs]
+all-features = true
+targets = ["aarch64-apple-darwin", "aarch64-apple-ios"]

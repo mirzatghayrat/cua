@@ -1,0 +1,116 @@
+[dependencies.dot-parser]
+optional = true
+version = "0.5.1"
+
+[dependencies.dot-parser-macros]
+optional = true
+version = "0.5.1"
+
+[dependencies.fixedbitset]
+default-features = false
+version = "0.5.7"
+
+[dependencies.hashbrown]
+default-features = false
+features = ["default-hasher", "inline-more"]
+version = "^0.15.0"
+
+[dependencies.indexmap]
+default-features = false
+version = "2.5.0"
+
+[dependencies.quickcheck]
+default-features = false
+optional = true
+version = "0.8"
+
+[dependencies.rayon]
+optional = true
+version = "1.5.3"
+
+[dependencies.serde]
+default-features = false
+optional = true
+version = "1.0"
+
+[dependencies.serde_derive]
+default-features = false
+optional = true
+version = "1.0"
+
+[dev-dependencies.ahash]
+version = "0.7.2"
+
+[dev-dependencies.bincode]
+version = "1.3.3"
+
+[dev-dependencies.defmac]
+version = "0.2.1"
+
+[dev-dependencies.fxhash]
+version = "0.2.1"
+
+[dev-dependencies.itertools]
+default-features = false
+version = "0.12.1"
+
+[dev-dependencies.odds]
+version = "0.4.0"
+
+[dev-dependencies.rand]
+version = "0.5.5"
+
+[features]
+all = ["unstable", "quickcheck", "matrix_graph", "stable_graph", "graphmap", "rayon", "dot_parser"]
+default = ["std", "graphmap", "stable_graph", "matrix_graph"]
+dot_parser = ["std", "dep:dot-parser", "dep:dot-parser-macros"]
+generate = []
+graphmap = []
+matrix_graph = []
+quickcheck = ["std", "dep:quickcheck", "graphmap", "stable_graph"]
+rayon = ["std", "dep:rayon", "indexmap/rayon", "hashbrown/rayon"]
+serde-1 = ["serde", "serde_derive"]
+stable_graph = ["serde?/alloc"]
+std = ["indexmap/std"]
+unstable = ["generate"]
+
+[lib]
+path = "src/lib.rs"
+
+[lints.clippy]
+alloc_instead_of_core = "warn"
+std_instead_of_alloc = "warn"
+std_instead_of_core = "warn"
+
+[package]
+authors = ["bluss", "mitchmindtree"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["data-structures"]
+description = "Graph data structure library. Provides graph types and graph algorithms."
+documentation = "https://docs.rs/petgraph/"
+edition = "2021"
+keywords = ["data-structure", "graph", "unionfind", "graph-algorithms"]
+license = "MIT OR Apache-2.0"
+name = "petgraph"
+readme = "README.md"
+repository = "https://github.com/petgraph/petgraph"
+rust-version = "1.64"
+version = "0.8.3"
+
+[package.metadata.cargo-semver-checks.lints]
+trait_newly_sealed = "allow"
+
+[package.metadata.docs.rs]
+features = ["rayon", "serde-1", "quickcheck"]
+
+[package.metadata.release]
+no-dev-version = true
+
+[profile.bench]
+debug = 2
+
+[profile.release]

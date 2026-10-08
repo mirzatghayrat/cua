@@ -1,0 +1,14 @@
+[dependencies.foreign-types-shared]
+version = "0.1"
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Steven Fackler <sfackler@gmail.com>"]
+description = "A framework for Rust wrappers over C APIs"
+license = "MIT/Apache-2.0"
+name = "foreign-types"
+readme = "README.md"
+repository = "https://github.com/sfackler/foreign-types"
+version = "0.3.2"

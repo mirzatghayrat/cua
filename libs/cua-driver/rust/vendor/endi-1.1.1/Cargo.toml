@@ -1,0 +1,24 @@
+[features]
+default = ["std"]
+std = []
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Zeeshan Ali Khan <zeenix@gmail.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["encoding", "parsing", "no-std"]
+description = "A simple endian-handling library"
+edition = "2021"
+keywords = ["byte", "endian", "big-endian", "little-endian", "endianness"]
+license = "MIT"
+name = "endi"
+readme = "README.md"
+repository = "https://github.com/zeenix/endi"
+rust-version = "1.60"
+version = "1.1.1"

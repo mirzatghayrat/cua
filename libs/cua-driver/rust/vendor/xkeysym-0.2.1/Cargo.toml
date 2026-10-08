@@ -1,0 +1,32 @@
+[dependencies.bytemuck]
+default-features = false
+features = ["derive"]
+optional = true
+version = "1.12.3"
+
+[dependencies.serde]
+default-features = false
+features = ["derive"]
+optional = true
+version = "1.0.160"
+
+[dev-dependencies.bytemuck]
+version = "1.12.3"
+
+[dev-dependencies.x11rb]
+version = "0.12.0"
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["John Nunley <jtnunley01@gmail.com>"]
+description = "A library for working with X11 keysyms"
+edition = "2018"
+keywords = ["x11", "keysym", "keysyms"]
+license = "MIT OR Apache-2.0 OR Zlib"
+name = "xkeysym"
+readme = "README.md"
+repository = "https://github.com/notgull/xkeysym"
+rust-version = "1.58.1"
+version = "0.2.1"

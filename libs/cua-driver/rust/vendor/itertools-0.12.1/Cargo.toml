@@ -1,0 +1,44 @@
+[dependencies.either]
+default-features = false
+version = "1.0"
+
+[dev-dependencies.criterion]
+version = "0.4.0"
+
+[dev-dependencies.paste]
+version = "1.0.0"
+
+[dev-dependencies.permutohedron]
+version = "0.2"
+
+[dev-dependencies.quickcheck]
+default_features = false
+version = "0.9"
+
+[dev-dependencies.rand]
+version = "0.7"
+
+[features]
+default = ["use_std"]
+use_alloc = []
+use_std = ["use_alloc", "either/use_std"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["bluss"]
+categories = ["algorithms", "rust-patterns"]
+description = "Extra iterator adaptors, iterator methods, free functions, and macros."
+documentation = "https://docs.rs/itertools/"
+edition = "2018"
+keywords = ["iterator", "data-structure", "zip", "product", "group-by"]
+license = "MIT OR Apache-2.0"
+name = "itertools"
+readme = "README.md"
+repository = "https://github.com/rust-itertools/itertools"
+rust-version = "1.43.1"
+version = "0.12.1"
+
+[profile.bench]
+debug = true

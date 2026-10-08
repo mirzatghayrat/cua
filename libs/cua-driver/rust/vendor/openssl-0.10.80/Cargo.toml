@@ -1,0 +1,54 @@
+[dependencies.bitflags]
+version = "2.2.1"
+
+[dependencies.cfg-if]
+version = "1.0"
+
+[dependencies.ffi]
+package = "openssl-sys"
+version = "0.9.116"
+
+[dependencies.foreign-types]
+version = "0.3.1"
+
+[dependencies.libc]
+version = "0.2"
+
+[dependencies.openssl-macros]
+version = "0.1.1"
+
+[dev-dependencies.hex]
+version = "0.4"
+
+[features]
+aws-lc = ["ffi/aws-lc"]
+aws-lc-fips = ["ffi/aws-lc-fips"]
+bindgen = ["ffi/bindgen"]
+default = []
+unstable_boringssl = ["ffi/unstable_boringssl"]
+v101 = []
+v102 = []
+v110 = []
+v111 = []
+vendored = ["ffi/vendored"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Steven Fackler <sfackler@gmail.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["cryptography", "api-bindings"]
+description = "OpenSSL bindings"
+edition = "2021"
+keywords = ["crypto", "tls", "ssl", "dtls"]
+license = "Apache-2.0"
+name = "openssl"
+readme = "README.md"
+repository = "https://github.com/rust-openssl/rust-openssl"
+rust-version = "1.80.0"
+version = "0.10.80"

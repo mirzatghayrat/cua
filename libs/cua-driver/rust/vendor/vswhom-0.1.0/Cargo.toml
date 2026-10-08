@@ -1,0 +1,20 @@
+[dependencies.vswhom-sys]
+version = "0.1"
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["nabijaczleweli <nabijaczleweli@gmail.com>"]
+categories = ["external-ffi-bindings"]
+description = "FFI to Jon Blow's VS discovery script"
+documentation = "https://rawcdn.githack.com/nabijaczleweli/vswhom-sys.rs/doc/vswhom_sys/index.html"
+keywords = ["visual-studio", "FFI"]
+license = "MIT"
+name = "vswhom"
+readme = "README.md"
+repository = "https://github.com/nabijaczleweli/vswhom.rs"
+version = "0.1.0"
+
+[target.'cfg(target_os = "windows")'.dependencies.libc]
+version = "0.2"

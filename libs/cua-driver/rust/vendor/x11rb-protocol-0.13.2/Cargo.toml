@@ -1,0 +1,67 @@
+[dependencies.serde]
+features = ["derive"]
+optional = true
+version = "1"
+
+[dev-dependencies.criterion]
+version = "0.5"
+
+[features]
+all-extensions = ["composite", "damage", "dbe", "dpms", "dri2", "dri3", "glx", "present", "randr", "record", "render", "res", "screensaver", "shape", "shm", "sync", "xevie", "xf86dri", "xf86vidmode", "xfixes", "xinerama", "xinput", "xkb", "xprint", "xselinux", "xtest", "xv", "xvmc"]
+composite = ["xfixes"]
+damage = ["xfixes"]
+dbe = []
+default = ["std"]
+dpms = []
+dri2 = []
+dri3 = []
+extra-traits = []
+glx = []
+present = ["randr", "xfixes", "sync", "dri3"]
+randr = ["render"]
+record = []
+render = []
+request-parsing = []
+res = []
+resource_manager = ["std"]
+screensaver = []
+shape = []
+shm = []
+std = []
+sync = []
+xevie = []
+xf86dri = []
+xf86vidmode = []
+xfixes = ["render", "shape"]
+xinerama = []
+xinput = ["xfixes"]
+xkb = []
+xprint = []
+xselinux = []
+xtest = []
+xv = ["shm"]
+xvmc = ["xv"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Uli Schlachter <psychon@znc.in>", "Eduardo Sánchez Muñoz <eduardosm-dev@e64.io>", "notgull <jtnunley01@gmail.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+description = "Rust bindings to X11"
+edition = "2021"
+keywords = ["xcb", "X11"]
+license = "MIT OR Apache-2.0"
+name = "x11rb-protocol"
+readme = "README.md"
+repository = "https://github.com/psychon/x11rb"
+resolver = "1"
+rust-version = "1.64"
+version = "0.13.2"
+
+[package.metadata.docs.rs]
+all-features = true

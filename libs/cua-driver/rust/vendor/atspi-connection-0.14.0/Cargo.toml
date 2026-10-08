@@ -1,0 +1,54 @@
+[dependencies.atspi-common]
+default-features = false
+features = ["zbus"]
+version = "0.14.0"
+
+[dependencies.atspi-proxies]
+version = "0.14.0"
+
+[dependencies.futures-lite]
+default-features = false
+optional = true
+version = "2.6.0"
+
+[dependencies.tracing]
+optional = true
+version = "0.1.40"
+
+[dependencies.zbus]
+default-features = false
+features = ["async-io"]
+version = "5.5"
+
+[dev-dependencies.enumflags2]
+version = "0.7.9"
+
+[dev-dependencies.tokio-test]
+version = "0.4.2"
+
+[features]
+default = ["p2p", "wrappers"]
+p2p = ["dep:futures-lite", "zbus/p2p"]
+tracing = ["dep:tracing"]
+wrappers = ["atspi-common/wrappers", "dep:futures-lite"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["accessibility"]
+description = "A method of connecting, querying, sending and receiving over AT-SPI."
+edition = "2021"
+include = ["LICENSE-*", "README.md", "src/**/*"]
+keywords = ["a11y", "accessibility", "linux", "screen-reader"]
+license = "Apache-2.0 OR MIT"
+name = "atspi-connection"
+readme = "README.md"
+repository = "https://github.com/odilia-app/atspi/"
+rust-version = "1.77.2"
+version = "0.14.0"

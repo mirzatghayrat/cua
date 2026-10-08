@@ -1,0 +1,34 @@
+[dependencies.once_cell]
+optional = true
+version = "1"
+
+[dependencies.tap]
+version = "1"
+
+[dependencies.typemap]
+optional = true
+version = "0.3"
+
+[features]
+alloc = []
+default = ["std"]
+garbage = ["once_cell", "typemap"]
+std = ["alloc"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["myrrlyn <self@myrrlyn.dev>"]
+categories = ["no-std"]
+description = "myrrlyn’s utility collection"
+documentation = "https://docs.rs/wyz"
+edition = "2018"
+homepage = "https://myrrlyn.net/crates/wyz"
+include = ["Cargo.toml", "LICENSE.txt", "README.md", "src/**/*.rs"]
+keywords = []
+license = "MIT"
+name = "wyz"
+readme = "README.md"
+repository = "https://github.com/myrrlyn/wyz"
+version = "0.5.1"

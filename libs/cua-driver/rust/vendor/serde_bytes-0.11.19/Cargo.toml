@@ -1,0 +1,51 @@
+[dependencies.serde_core]
+default-features = false
+version = "1.0.220"
+
+[dev-dependencies.bincode]
+features = ["serde"]
+version = "2"
+
+[dev-dependencies.serde]
+version = "1.0.220"
+
+[dev-dependencies.serde_derive]
+version = "1.0.220"
+
+[dev-dependencies.serde_test]
+version = "1.0.166"
+
+[features]
+alloc = ["serde_core/alloc"]
+default = ["std"]
+std = ["serde_core/std"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["David Tolnay <dtolnay@gmail.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["encoding", "no-std", "no-std::no-alloc"]
+description = "Optimized handling of `&[u8]` and `Vec<u8>` for Serde"
+documentation = "https://docs.rs/serde_bytes"
+edition = "2018"
+keywords = ["serde", "serialization", "no_std", "bytes"]
+license = "MIT OR Apache-2.0"
+name = "serde_bytes"
+readme = "README.md"
+repository = "https://github.com/serde-rs/bytes"
+rust-version = "1.68"
+version = "0.11.19"
+
+[package.metadata.docs.rs]
+rustdoc-args = ["--generate-link-to-definition", "--extern-html-root-url=core=https://doc.rust-lang.org", "--extern-html-root-url=alloc=https://doc.rust-lang.org", "--extern-html-root-url=std=https://doc.rust-lang.org"]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[target."cfg(any())".dependencies.serde]
+default-features = false
+version = "1.0.220"

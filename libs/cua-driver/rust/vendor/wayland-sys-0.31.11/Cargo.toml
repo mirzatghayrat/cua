@@ -1,0 +1,57 @@
+[build-dependencies.pkg-config]
+version = "0.3.7"
+
+[dependencies.dlib]
+optional = true
+version = "0.5.3"
+
+[dependencies.libc]
+optional = true
+version = "0.2"
+
+[dependencies.log]
+optional = true
+version = "0.4"
+
+[dependencies.memoffset]
+optional = true
+version = "0.9"
+
+[dependencies.once_cell]
+optional = true
+version = "1.0"
+
+[features]
+client = ["dep:dlib", "dep:log"]
+cursor = ["client"]
+dlopen = ["once_cell"]
+egl = ["client"]
+libwayland_client_1_23 = []
+libwayland_server_1_22 = []
+libwayland_server_1_23 = ["libwayland_server_1_22"]
+server = ["libc", "memoffset", "dep:dlib", "dep:log"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Elinor Berger <elinor@safaradeg.net>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["external-ffi-bindings"]
+description = "FFI bindings to the various libwayland-*.so libraries. You should only need this crate if you are working on custom wayland protocol extensions. Look at the crate wayland-client for usable bindings."
+documentation = "https://docs.rs/wayland-sys/"
+edition = "2021"
+license = "MIT"
+name = "wayland-sys"
+readme = "README.md"
+repository = "https://github.com/smithay/wayland-rs"
+rust-version = "1.71"
+version = "0.31.11"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]

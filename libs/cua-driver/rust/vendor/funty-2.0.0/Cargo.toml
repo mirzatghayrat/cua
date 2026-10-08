@@ -1,0 +1,23 @@
+[dev-dependencies.static_assertions]
+version = "1"
+
+[features]
+default = ["std"]
+std = []
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["myrrlyn <self@myrrlyn.dev>"]
+categories = ["no-std", "rust-patterns"]
+description = "Trait generalization over the primitive types"
+documentation = "https://docs.rs/funty"
+edition = "2018"
+include = ["Cargo.toml", "LICENSE.txt", "src/lib.rs"]
+keywords = ["numerics", "primitives", "traits"]
+license = "MIT"
+name = "funty"
+readme = "README.md"
+repository = "https://github.com/myrrlyn/funty"
+version = "2.0.0"

@@ -1,0 +1,43 @@
+[dependencies.as-raw-xcb-connection]
+optional = true
+version = "1.0"
+
+[dependencies.libc]
+version = "0.2.148"
+
+[dependencies.memmap2]
+optional = true
+version = "0.9.0"
+
+[dependencies.xkeysym]
+version = "0.2.0"
+
+[dev-dependencies.evdev]
+version = "0.11.4"
+
+[features]
+default = ["wayland"]
+wayland = ["memmap2"]
+x11 = ["as-raw-xcb-connection"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Remi THEBAULT <remi.thebault@gmail.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+description = "Rust bindings and wrappers for libxkbcommon"
+edition = "2021"
+keywords = ["keyboard", "x11", "wayland", "xcb", "input"]
+license = "MIT"
+name = "xkbcommon"
+readme = "README.md"
+repository = "https://github.com/rust-x-bindings/xkbcommon-rs"
+version = "0.9.0"
+
+[package.metadata.docs.rs]
+all-features = true

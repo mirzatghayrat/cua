@@ -1,0 +1,22 @@
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Alex Crichton <alex@alexcrichton.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+description = """
+A library for helping to find system-wide trust anchor ("root") certificate
+locations based on paths typically used by `openssl`.
+"""
+edition = "2021"
+homepage = "https://github.com/rustls/openssl-probe"
+license = "MIT OR Apache-2.0"
+name = "openssl-probe"
+readme = "README.md"
+repository = "https://github.com/rustls/openssl-probe"
+rust-version = "1.60.0"
+version = "0.2.1"

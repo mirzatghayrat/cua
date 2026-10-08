@@ -1,0 +1,28 @@
+[lib]
+path = "src/lib.rs"
+
+[lints.rust.unexpected_cfgs]
+check-cfg = ["cfg(tarpaulin)"]
+level = "warn"
+priority = 0
+
+[package]
+authors = ["Tim Visee <3a4fb3964f@sinenomine.email>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["parser-implementations", "parsing"]
+description = "Rust library to easily compare version numbers with no specific format, and test against various comparison operators."
+documentation = "https://docs.rs/version-compare"
+edition = "2021"
+homepage = "https://timvisee.com/projects/version-compare/"
+include = ["/src", "/examples", "Cargo.toml", "LICENSE", "README.md"]
+keywords = ["version", "compare", "comparison", "comparing"]
+license = "MIT"
+name = "version-compare"
+readme = "README.md"
+repository = "https://gitlab.com/timvisee/version-compare"
+rust-version = "1.56.0"
+version = "0.2.1"

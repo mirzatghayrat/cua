@@ -1,0 +1,50 @@
+[dependencies.lock_api_crate]
+optional = true
+package = "lock_api"
+version = "0.4"
+
+[dependencies.portable-atomic]
+default-features = false
+optional = true
+version = "1"
+
+[dev-dependencies.criterion]
+version = "0.4"
+
+[features]
+barrier = ["mutex"]
+default = ["lock_api", "mutex", "spin_mutex", "rwlock", "once", "lazy", "barrier"]
+fair_mutex = ["mutex"]
+lazy = ["once"]
+lock_api = ["lock_api_crate"]
+mutex = []
+once = []
+portable_atomic = ["portable-atomic"]
+rwlock = []
+spin_mutex = ["mutex"]
+std = []
+ticket_mutex = ["mutex"]
+use_ticket_mutex = ["mutex", "ticket_mutex"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Mathijs van de Nes <git@mathijs.vd-nes.nl>", "John Ericson <git@JohnEricson.me>", "Joshua Barretto <joshua.s.barretto@gmail.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+description = "Spin-based synchronization primitives"
+keywords = ["spinlock", "mutex", "rwlock"]
+license = "MIT"
+name = "spin"
+readme = "README.md"
+repository = "https://github.com/mvdnes/spin-rs.git"
+rust-version = "1.38"
+version = "0.9.9"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]

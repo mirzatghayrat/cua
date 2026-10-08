@@ -1,0 +1,86 @@
+[dependencies.arbitrary]
+features = ["derive"]
+optional = true
+version = "1"
+
+[dependencies.document-features]
+optional = true
+version = "0.2"
+
+[dependencies.encoding_rs]
+optional = true
+version = "0.8"
+
+[dependencies.memchr]
+version = "2.1"
+
+[dependencies.serde]
+optional = true
+version = ">=1.0.180"
+
+[dependencies.tokio]
+default-features = false
+features = ["io-util"]
+optional = true
+version = "1.10"
+
+[dev-dependencies.criterion]
+version = ">=0.4,<0.9"
+
+[dev-dependencies.pretty_assertions]
+version = "1.4"
+
+[dev-dependencies.regex]
+version = "1"
+
+[dev-dependencies.serde-value]
+version = "0.7"
+
+[dev-dependencies.serde_derive]
+version = "1.0.206"
+
+[dev-dependencies.tokio]
+default-features = false
+features = ["macros", "rt"]
+version = "1.21"
+
+[dev-dependencies.tokio-test]
+version = "0.4"
+
+[features]
+async-tokio = ["tokio"]
+default = []
+encoding = ["encoding_rs"]
+escape-html = []
+overlapped-lists = []
+serde-types = ["serde/derive"]
+serialize = ["serde"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["asynchronous", "encoding", "parsing", "parser-implementations"]
+description = "High performance xml reader and writer"
+documentation = "https://docs.rs/quick-xml"
+edition = "2021"
+include = ["src/*", "LICENSE-MIT.md", "README.md"]
+keywords = ["xml", "serde", "parser", "writer", "html"]
+license = "MIT"
+name = "quick-xml"
+readme = "README.md"
+repository = "https://github.com/tafia/quick-xml"
+rust-version = "1.56"
+version = "0.39.4"
+
+[package.metadata.docs.rs]
+all-features = true
+
+[profile.bench]
+debug = 2
+lto = true
