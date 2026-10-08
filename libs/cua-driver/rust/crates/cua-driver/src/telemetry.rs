@@ -214,6 +214,10 @@ pub fn is_enabled() -> bool {
 }
 
 fn effective_enabled() -> (bool, &'static str) {
+    // Arslan's build: off, whatever the environment or saved preference says.
+    if crate::arslan::OFFLINE {
+        return (false, "arslan_build");
+    }
     // The cross-tool opt-out wins over everything.
     if std::env::var("DO_NOT_TRACK").is_ok_and(|v| {
         let v = v.trim();
@@ -2222,6 +2226,9 @@ fn post_to_posthog(payload: &Value) -> Result<u16, String> {
 }
 
 fn post_to_posthog_with_timeout(payload: &Value, timeout: Duration) -> Result<u16, String> {
+    if crate::arslan::OFFLINE {
+        return Err(crate::arslan::OFFLINE_REASON.to_owned());
+    }
     let agent = ureq::Agent::config_builder()
         .timeout_global(Some(timeout))
         .build()

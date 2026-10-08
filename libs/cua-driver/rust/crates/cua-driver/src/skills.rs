@@ -708,6 +708,9 @@ fn is_nightly_version(version: &str) -> bool {
 }
 
 fn http_get_text(url: &str) -> Result<String> {
+    if crate::arslan::OFFLINE {
+        bail!("{} ({url})", crate::arslan::OFFLINE_REASON);
+    }
     let resp = ureq::get(url)
         .call()
         .map_err(|e| anyhow!("HTTP error fetching {url}: {e}"))?;
@@ -718,6 +721,9 @@ fn http_get_text(url: &str) -> Result<String> {
 }
 
 fn http_get_bytes(url: &str) -> Result<Vec<u8>> {
+    if crate::arslan::OFFLINE {
+        bail!("{} ({url})", crate::arslan::OFFLINE_REASON);
+    }
     let resp = ureq::get(url)
         .call()
         .map_err(|e| anyhow!("HTTP error fetching {url}: {e}"))?;

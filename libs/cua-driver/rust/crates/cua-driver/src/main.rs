@@ -17,6 +17,7 @@
 //! runs in the background. MCP and CLI client processes never initialize the
 //! platform tool registry.
 
+mod arslan;
 mod autostart;
 mod broken_pipe;
 mod bundle;

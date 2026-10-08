@@ -684,6 +684,10 @@ pub fn fetch_latest_version() -> Result<String, String> {
 pub fn fetch_latest_version_for(
     channel: crate::release_channel::ReleaseChannel,
 ) -> Result<String, String> {
+    if crate::arslan::OFFLINE {
+        let _ = channel;
+        return Err(crate::arslan::OFFLINE_REASON.to_owned());
+    }
     if crate::updater::is_pacman_managed() {
         return Err(crate::updater::PACMAN_UPDATE_GUIDANCE.to_owned());
     }

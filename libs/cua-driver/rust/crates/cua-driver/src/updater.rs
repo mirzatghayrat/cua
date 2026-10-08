@@ -107,6 +107,13 @@ pub fn run_install_script(version: &str) -> std::io::Result<ExitStatus> {
 }
 
 fn run_install_script_with_ownership(version: &str, managed: bool) -> std::io::Result<ExitStatus> {
+    if crate::arslan::OFFLINE {
+        let _ = (version, managed);
+        return Err(std::io::Error::new(
+            std::io::ErrorKind::PermissionDenied,
+            crate::arslan::OFFLINE_REASON,
+        ));
+    }
     if managed {
         return Err(std::io::Error::new(
             std::io::ErrorKind::PermissionDenied,
